@@ -12,10 +12,10 @@
   <h3>No students have been added yet!</h3>
 }
 
-<ul>
+<ul class="list-group">
 @foreach (Student student in Model)
 {
-  <li>
+  <li class="list-group-item">
     @Html.ActionLink($"{student.Description}", "Details", new { id = student.StudentId })
     @if (student.Completed == true)
     {
@@ -25,5 +25,5 @@
 }
 </ul>
 
-<p>@Html.ActionLink("Add new student", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<button>@Html.ActionLink("Add new student", "Create")</button>
+<button>@Html.ActionLink("Home", "Index", "Home")</button>

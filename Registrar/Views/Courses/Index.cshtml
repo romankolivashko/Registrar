@@ -11,12 +11,12 @@
   <h3>No courses have been added yet!</h3>
 } 
 
-<ul>
-  @foreach(Course category in Model)
+<ul class="list-group">
+  @foreach(Course course in Model)
   {
-    <li>@Html.ActionLink($"{category.Name}", "Details", new { id = category.CourseId })</li>
+    <li class="list-group-item">@Html.ActionLink($"{course.Name}", "Details", new { id = course.CourseId })</li>
   }
 </ul>
 
-<p>@Html.ActionLink("Add new category", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<button>@Html.ActionLink("Add new course", "Create")</button>
+<button>@Html.ActionLink("Home", "Index", "Home")</button>
