@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Registrar.Models.Student
+
+<h4>Add new student</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Enrollement)
+    @Html.TextBoxFor(model => model.Enrollement, new {type = "date"})
+
+    @Html.Label("Select Course")
+    @Html.DropDownList("CourseId")
+    @* @Html.HiddenFor(model => model.Completed) *@
+    <input type="submit" value="Add new student" class="btn btn-default"/>
+}
+<p>@Html.ActionLink("Show all students", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
